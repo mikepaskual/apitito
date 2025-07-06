@@ -1,0 +1,42 @@
+# Maven
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+logs/
+*.out
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+.sts4-cache
+.apt_generated
+.factorypath
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Build tools
+/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Environment files
+.env
+.env.*
+
+# Java
+*.class
+
+# Backup and temp files
+*.bak
+*.swp
+*~
