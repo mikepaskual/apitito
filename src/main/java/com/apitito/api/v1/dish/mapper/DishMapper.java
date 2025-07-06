@@ -11,7 +11,7 @@ public class DishMapper {
     }
 
     public static Dish toEntity(DishRequest request) {
-        return new Dish.Builder()
+        return Dish.builder()
                 .category(request.getCategory())
                 .description(request.getDescription())
                 .name(request.getName())

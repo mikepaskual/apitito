@@ -38,16 +38,6 @@ public class Dish {
         super();
     }
 
-    // Private constructor for builder
-    private Dish(Builder builder) {
-        this.category = builder.category;
-        this.creationDate = builder.creationDate;
-        this.description = builder.description;
-        this.id = builder.id;
-        this.name = builder.name;
-        this.price = builder.price;
-    }
-
     @PrePersist
     private void onCreate() {
         this.creationDate = LocalDateTime.now();
@@ -97,6 +87,14 @@ public class Dish {
         return creationDate;
     }
 
+    public void setCreationDate(LocalDateTime creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
     // Builder pattern
     public static class Builder {
         private Long id;
@@ -141,7 +139,14 @@ public class Dish {
         }
 
         public Dish build() {
-            return new Dish(this);
+            Dish dish = new Dish();
+            dish.setCategory(this.category);
+            dish.setCreationDate(this.creationDate);
+            dish.setDescription(this.description);
+            dish.setId(this.id);
+            dish.setName(this.name);
+            dish.setPrice(this.price);
+            return dish;
         }
     }
 }
